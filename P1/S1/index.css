@@ -7,14 +7,9 @@ h1 {
   background-color:rgb(240, 182, 22);
   color:#000;
   text-align: center;
-  display: inline-block;
-  text-decoration: underline;
-  align-items: center;
-  justify-content: center;
   font-size:x-large;
   position: absolute;
   left: 50%;
-  
 }
 
 /*  Propiedades de la caja del párrafo */
@@ -29,7 +24,7 @@ p {
 }
 
 ul {
-  width:240px;
+  width:280px;
   margin:10px 50px;
   padding:20px;
   font-size:italic;
@@ -90,13 +85,4 @@ h3 {
   text-decoration:underline;
   font-family: 'Times New Roman', Times, serif;
   font-size: x-large;
-}
-
-h4 {
-  width:300px;
-  margin:5px 50px;
-  padding:5px;
-  background-color:rgb(182, 6, 6);
-  position: absolute;
-  left: 50%;
 }
