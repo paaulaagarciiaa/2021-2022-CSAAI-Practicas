@@ -56,6 +56,10 @@ img {
     width:20%
 }
 
+.gif {
+    width:60%;
+}
+
 
 br{
     font-size: 5px;
@@ -88,6 +92,7 @@ br{
       text-align:justify;
       color:black;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 13px;
 
   }
 
@@ -95,6 +100,23 @@ br{
       text-align: center;
       color:black;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 20px;
+  }
+
+  h6 {
+    text-align:justify;
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+
+}
+#content {
+    resize: vertical;
+  }
+
+.center_plane {
+    width: 40px;
+    position: absolute;
   }
 
   
