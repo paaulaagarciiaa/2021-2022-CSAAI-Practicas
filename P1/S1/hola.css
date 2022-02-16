@@ -57,7 +57,7 @@ img {
 }
 
 .gif {
-    width:60%;
+    width:20%;
 }
 
 
@@ -104,10 +104,11 @@ br{
   }
 
   h6 {
-    text-align:justify;
-    color:black;
+    text-align:center;
+    color:rgb(75, 2, 2);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 10px;
+    font-family: cursive;
 
 }
 #content {
@@ -127,4 +128,18 @@ br{
     box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
   }
 
-  
+  #message {
+    width:390px;
+    margin:10px 50px;
+    padding:20px;
+    font-size:italic;
+    background-image: url(tela.jpg);
+  }
+
+  td {
+      text-align: center;
+      color: rgb(75, 2, 2);
+      font-family: cursive;
+      font-size: 10px;
+  }
+
