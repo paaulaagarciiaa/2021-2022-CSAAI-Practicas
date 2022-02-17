@@ -1,4 +1,12 @@
+@font-face {
+  font-family: 'fuente';
+  src: url(good\ times\ rg.otf);
+}
 
+@font-face {
+  font-family: 'fuente2';
+  src: url(Far-From\ Homecoming\ Updated.otf);
+}
 
 body {
   background-image: url(fondo.jpg);
@@ -13,7 +21,7 @@ body {
 .cuadrado1 {
   grid-area: menu;
   width: 250px;
-  height: 650px;
+  height: 680px;
   border: 5px solid rgb(245, 207, 38);
   background-color: rgb(240, 182, 22);
   margin-top: 70px;
@@ -33,7 +41,7 @@ h5 {
 }
 
 #nombre {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:'fuente2';
   text-align: center;
 }
 
@@ -57,7 +65,7 @@ img {
 }
 
 .gif {
-  width:20%;
+  width:10%;
 }
 
 
@@ -99,7 +107,7 @@ h4 {
 h1 {
     text-align: center;
     color:rgb(0, 0, 0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'fuente';
     font-size: 20px;
 }
 
@@ -108,7 +116,6 @@ h6 {
   color:rgb(12, 2, 2);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 15px;
-  font-family: cursive;
 
 }
 #content {
@@ -138,6 +145,14 @@ h6 {
 
 
 .arriba {
-  width:6%;
+  width:20%;
 }
 
+.iconooo {
+  text-align:right;
+  width: 5%;
+} 
+
+h3 {
+  text-align:center;
+}
