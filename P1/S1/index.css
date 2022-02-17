@@ -56,7 +56,7 @@ h5 {
 }
 
 .vengadores {
-  width:50%;
+  width:70%;
 }
 
 
@@ -141,6 +141,7 @@ h6 {
   padding:20px;
   font-size:italic;
   background-image: url(tela.jpg);
+  font-family: 'fuente2';
 }
 
 
