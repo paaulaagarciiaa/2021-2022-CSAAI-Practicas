@@ -24,8 +24,8 @@ body {
   height: 680px;
   border: 5px solid rgb(245, 207, 38);
   background-color: rgb(240, 182, 22);
-  margin-top: 70px;
-  margin-left: -10px;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 
 
@@ -41,7 +41,7 @@ h5 {
 }
 
 #nombre {
-  font-family:'fuente2';
+  font-family:'fuente2'; 
   text-align: center;
 }
 
@@ -50,13 +50,23 @@ h5 {
   width: 5%;
 }
 
+.primer {
+  text-align:right;
+  width: 1.5%;
+}
+
 .iconoo {
   text-align:right;
-  width: 1%;
+  width: 3%;
+}
+
+.tercer {
+  text-align:right;
+  width: 1.5%;
 }
 
 .vengadores {
-  width:70%;
+  width:90%;
 }
 
 
@@ -65,7 +75,7 @@ img {
 }
 
 .gif {
-  width:10%;
+  width:30%;
 }
 
 
@@ -77,8 +87,8 @@ br{
   border: 5px solid rgb(245, 207, 38);
   background-color: rgb(240, 182, 22);
   grid-area: main;
-  margin-top: 70px;
-  margin-right: -10px;
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 #Texto{
@@ -89,7 +99,7 @@ br{
 
 .grid-container {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 25px;
   grid-template-areas:
     'menu main main main main right'
     'menu footer footer footer footer footer';
@@ -135,15 +145,23 @@ h6 {
   box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
 }
 
-#message {
+/*#message {
   width:390px;
   margin:10px 50px;
   padding:20px;
   font-size:italic;
   background-image: url(tela.jpg);
-  font-family: 'fuente2';
-}
+  
+}*/
 
+#message {
+  width:190px;
+  margin:10px 10px;
+  padding:20px;
+  font-size:italic;
+  background-image: url(tela.jpg);
+}
+  
 
 .arriba {
   width:20%;
@@ -156,4 +174,22 @@ h6 {
 
 h3 {
   text-align:center;
+  font-family: 'fuente';
+}
+
+.cuadrado3 {
+  grid-area: menu;
+  width: 280px;
+  height: 348px;
+  border: 5px solid rgb(245, 207, 38);
+  background-color: rgb(240, 182, 22);
+  margin-top: 760px;
+  margin-left: 20px;
+}
+
+.cuadrado4 {
+  grid-area: main;
+  margin-top: 127px;
+  margin-right: 100px;
+  text-align: right;
 }
