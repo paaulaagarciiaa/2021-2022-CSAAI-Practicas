@@ -75,7 +75,7 @@ img {
 }
 
 .gif {
-  width:30%;
+  width:10%;
 }
 
 
@@ -187,9 +187,11 @@ h3 {
   margin-left: 20px;
 }
 
-.cuadrado4 {
-  grid-area: main;
-  margin-top: 160px;
-  margin-right: 140px;
-  text-align: right;
+p {
+  text-align:center;
+  color:black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+
 }
+
