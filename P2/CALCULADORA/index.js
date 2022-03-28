@@ -1,6 +1,7 @@
 
 var console;
 
+console.log("Launching Javascript... ");
 
 const gui ={
   display:document.getElementById("display"),
@@ -9,7 +10,6 @@ const gui ={
   equal:document.getElementById("equal"),
 };
 
-console.log("Launching Javascript... ");
 
 
 let digitos = document.getElementsByClassName("numero");
