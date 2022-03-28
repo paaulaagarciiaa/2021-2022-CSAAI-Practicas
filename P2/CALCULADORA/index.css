@@ -28,7 +28,7 @@ h1 {
 
 .html{
   border: solid;
-  border-radius: 10px;
+  border-radius: 30px;
   font-family: "fuente";
   width: 380px; 
   padding: 30px;
@@ -39,14 +39,15 @@ h1 {
 
 #display{
   background-color:rgb(255, 255, 255);
-  padding: 15px;
+  padding: 23px;
   border: solid;
   border-color: rgb(0, 0, 0);
-  border-radius: 5px;
+  border-radius: 2px;
   text-align: center;
-  font-weight: bold; 
-  font-size: 20px;
+  font-size: 17px;
   font-family: "fuente";
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Calculator{
