@@ -1,7 +1,7 @@
 
 var console;
 
-console.log("Launching Javascript... ");
+console.log("Ejecutando JS...");
 
 const gui ={
   display:document.getElementById("display"),
@@ -21,7 +21,7 @@ const ESTADO = {
   OP1: 1,
   OPERATION: 2,
   OP2: 3,
-}
+};
 
 let op = ESTADO.INIT;
 
