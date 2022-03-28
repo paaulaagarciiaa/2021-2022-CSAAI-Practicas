@@ -3,11 +3,6 @@
   src: url(good\ times\ rg.otf);
 }
 
-@font-face {
-  font-family: 'fuente2';
-  src: url(Far-From\ Homecoming\ Updated.otf);
-}
-
 
 body {  
   background-image: url(fondo.jpg);
