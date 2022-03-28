@@ -1,80 +1,75 @@
 
-console.log("Launching Javascript... ");
+var console;
+
 
 const gui ={
   display:document.getElementById("display"),
-  delet:document.getElementById("delete"),
   clear:document.getElementById("clear"),
-  exp:document.getElementById("exp"),
-  ans:document.getElementById("ans"),
+  delet:document.getElementById("delete"),
   equal:document.getElementById("equal"),
-  dot:document.getElementById("dot")
-}
+};
+
+console.log("Launching Javascript... ");
 
 
-let digitos = document.getElementsByClassName("cdigito");
-//--Estados calculadora
+let digitos = document.getElementsByClassName("numero");
+console.log (digitos);
+let operacion = document.getElementsByClassName("simbolos");
+
 const ESTADO = {
   INIT: 0,
   OP1: 1,
   OPERATION: 2,
   OP2: 3,
-}
+};
 
-//-- Variable de estado
-//-- Arrancamos desde el estado inicial
-let estado = ESTADO.INIT;
-
-//-- Ha llegado un dígito
-function number(num)
-{
-  //-- Segun el estado hacemos una cosa u otra
-  if (estado == ESTADO.INIT) {
-    display.innerHTML = num;
-    estado = ESTADO.OP1;
-  }else if (estado == ESTADO.OP1){
-    display.innerHTML += num;
-  }else if (estado == ESTADO.OPERATION) {
-    display.innerHTML += num;
-    estado = ESTADO.OP2;
-  }else if (estado == ESTADO.OP2){
-    display.innerHTML += num;
-  }
-}
+let op = ESTADO.INIT;
 
 for (i=0; i<digitos.length; i++){
-  digitos[i].onclick = (ev)=>{
+  digitos[i].onclick = (ev) => {
     number(ev.target.value);
-  }
+  };
 }
 
-let operator = document.getElementsByClassName("coperator");
-
-for (i=0; i<operator.length; i++){
-  operator[i].onclick = (ev)=>{
-    if(estado == ESTADO.OP1){
+for (i=0; i<operacion.length; i++){
+  operacion[i].onclick = (ev) => {
+    if(op == ESTADO.OP1){
            display.innerHTML += ev.target.value;
-           estado = ESTADO.OPERATION;
+           op = ESTADO.OPERATION;
          }
-      }
+      };
 }
 
-//-- Evaluar la expresion
-equal.onclick = () => {
- if(estado == ESTADO.OP1 ||  estado == ESTADO.OP2){
-    display.innerHTML = eval(display.innerHTML);
-    estado = ESTADO.OP1;
+function number(num)
+{
+  if (op == ESTADO.INIT) {
+    display.innerHTML = num;
+    op = ESTADO.OP1;
+  }else if (op == ESTADO.OP1){
+    display.innerHTML += num;
+  }else if (op == ESTADO.OPERATION) {
+    display.innerHTML += num;
+    op = ESTADO.OP2;
+  }else if (op == ESTADO.OP2){
+    display.innerHTML += num;
   }
 }
 
-//-- Borrar último digito
-delet.onclick = () => {
-  display.innerHTML = display.innerHTML.slice(0,-1);
-}
-
-//-- Poner a cero la expresion
+//Poner a cero la expresion
 clear.onclick = () => {
   display.innerHTML = "0";
     console.log("clear");
-    estado = ESTADO.INIT;
-}
+    op = ESTADO.INIT;
+};
+
+//Borrar último digito
+delet.onclick = () => {
+  display.innerHTML = display.innerHTML.slice(0,-1);
+};
+
+equal.onclick = () => {
+  display.innerHTML = eval(display.innerHTML);
+ };
+
+
+
