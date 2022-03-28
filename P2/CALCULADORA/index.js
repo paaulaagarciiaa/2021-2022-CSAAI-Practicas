@@ -21,7 +21,7 @@ const ESTADO = {
   OP1: 1,
   OPERATION: 2,
   OP2: 3,
-};
+}
 
 let op = ESTADO.INIT;
 
