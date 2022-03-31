@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'fuente';
+  src: url(good\ times\ rg.otf);
+}
+
+
+body {  
+  background-image: url(fondo.jpg);
+  background-size: cover; 
+}
+
+h1 {
+  font-family: "fuente";
+  font-size: 80px;
+  text-align: center;
+  padding: 10px;
+  margin: 50px;
+  margin-bottom: 0px;
+  color:black;
+  -webkit-text-stroke: 1.2px rgb(162, 184, 255);
+  }
+
+
+.html{
+  border: solid;
+  border-radius: 30px;
+  font-family: "fuente";
+  width: 380px; 
+  padding: 30px;
+  background-image: url(tela.jpg);
+  margin: auto;
+}
+
+
+#display{
+  background-color:rgb(255, 255, 255);
+  padding: 23px;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  border-radius: 2px;
+  text-align: center;
+  font-size: 17px;
+  font-family: "fuente";
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Calculator{
+  text-align: center;
+  background-color:rgba(8, 0, 0, 0.459);
+  padding: 13px;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button{
+  background-color: rgb(39, 70, 172);
+  height: 60px;
+  width: 60px;
+  padding: 15px;
+  border: solid;
+  border-color: black;
+  border-radius: 4px;
+  margin-left:5px;
+  margin-top: 5px;
+  font-size: 20px;
+  font-family: "fuente";
+  box-shadow: 1px 1px 3px rgb(2, 11, 39);
+}
+
+button:hover{
+  background-image: url(cara.png);
+  background-size: cover; 
+
+}
+
+.boton {
+  background-color: rgb(33, 43, 133);;
+}
+
+.numero {
+  background-color: rgb(245, 207, 38);
+}
