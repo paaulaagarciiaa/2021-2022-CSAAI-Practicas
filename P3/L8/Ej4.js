@@ -2,7 +2,7 @@ console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
 const start = document.getElementById("start");
-//const raqueta = document.getElementById("raqueta");
+const raqueta = document.getElementById("raqueta");
 izquierda = document.getElementById("izquierda");
 derecha = document.getElementById("derecha");
 
@@ -14,6 +14,7 @@ const ctx = canvas.getContext("2d");
 const ESTADO = {
     INIT: 0,
     SAQUE: 1,
+    
 }
 
 //Comienza el estado inicial
@@ -24,8 +25,8 @@ let x = 205;
 let y = 455;
 
 //Velocidades de la bola
-let velx = -9;
-let vely = -3;
+let velx = 3;
+let vely = -1;
 
 //Coordenadas de la raqueta
 let w = 170;

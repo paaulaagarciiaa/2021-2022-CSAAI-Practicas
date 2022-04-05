@@ -2,7 +2,7 @@ console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
 const start = document.getElementById("start");
-//const raqueta = document.getElementById("raqueta");
+const raqueta = document.getElementById("raqueta");
 izquierda = document.getElementById("izquierda");
 derecha = document.getElementById("derecha");
 
@@ -14,20 +14,26 @@ const ctx = canvas.getContext("2d");
 const ESTADO = {
     INIT: 0,
     SAQUE: 1,
+    FINISH: 2,
 }
+
+//Límite de minimas vidas
+const MIN_VIDAS = 0;
+//Vidas totales
+let vidas = 3;
 
 //Comienza el estado inicial
 let estado = ESTADO.INIT;
 
 //Coordenadas de la bola
 let x = 205;
-let y = 458;
+let y = 455;
 
-//Velocidades de la bola
-let velx = 9;
-let vely = -3;
+//-- Velocidades de la bola
+let velx = 3;
+let vely = -1;
 
-//Coordenadas de la raqueta
+//-- Coordenadas de la raqueta
 let w = 170;
 let z = 465;
 
@@ -63,55 +69,62 @@ ctx.closePath()
 function update() 
 {
   start.onclick = () => {
-    estado = ESTADO.SAQUE;
-    console.log("Saque");
+    if (vidas == MIN_VIDAS){
+        estado = ESTADO.FINISH;
+        console.log("Fin");
+    }else{
+        vidas -= 1;
+        estado = ESTADO.SAQUE;
+        console.log("Saque");
+        //canvas.focus();
+    }
   }
 
-  //Rebote extremos verticales
+  //Condicion de rebote en extremos verticales del canvas
   if (x < 10 || x >= (canvas.width - 10) ) {
     velx = -velx;
   }
 
-    //Rebote extremos horizontales
+  //Condición de rebote en extremos horizontales del canvas
   if (y <= 10) {
     vely = -vely;
   }
 
-  //Condición de rebote en extremos horizontales
+  //Condición de rebote en extremos horizontales del canvas
   if (y > (canvas.height) ) {
     estado = ESTADO.INIT;
-    x = w+40;
-    y = z-10;
+    x = w + 40;
+    y = z - 10;
     vely = -vely;
   }
 
-  //Condición de limite de raqueta en extremos horizontales
+  //Condición de limite de raqueta en extremos horizontales del canvas
   if (w > 10 || w <= (canvas.width - 10) ) {
-    //Movimiento raqueta a la izquierda
+    //-Movimiento raqueta a la izquierda
     izquierda.onclick = () => {
         console.log("Moviendo a la izquierda la raqueta");
-        w=w-20;
+        w = w - 20;
     }
     //Movimiento raqueta a la derecha
     derecha.onclick = () => {
         console.log("Moviendo a la derecha la raqueta");
-        w=w+20;
+        w = w + 20;
     }
   }
   if(w < 10) {
-    w= 0;
+    w = 0;
   }
   if(w >= (canvas.width - 90)) {
-    w= 680;
+    w = 680;
   }
 
   //Colision bola con raqueta
   if ((x + 10) >= w && x <=(w + 100) &&
-      (y + 10) >= z && y <=(z + 10)) {
+      (y + 5) >= z && y <=(z + 10)) {
         vely = -vely;
   }
 
-  //Actualizar posición
+  //Actualizar la posición
   if (estado == ESTADO.SAQUE) {
     x = x + velx;
     y = y + vely;
@@ -120,19 +133,27 @@ function update()
   //2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-   //3 
-   bola ();
-   pala ();
+  //3 
+  bola ();
+  pala ();
 
-  //Texto
-  ctx.font = "20px Arial Black";
-  ctx.fillStyle = 'black'
-  ctx.fillText("VIDAS: 5", 300, 40);
+//Texto
+ctx.font = "20px Arial Black";
+ctx.fillStyle = 'black'
+ctx.fillText("VIDAS: 5", 300, 40);
 
-  ctx.font = "20px Arial Black";
-  ctx.fillStyle = 'black'
-  ctx.fillText("047", 30, 40);
+ctx.font = "20px Arial Black";
+ctx.fillStyle = 'black'
+ctx.fillText("047", 30, 40);
 
+  //Mensaje final
+  if (estado == ESTADO.FINISH) {
+    if (vidas == MIN_VIDAS){
+        ctx.font = "40px Arial Black";
+        ctx.fillStyle = 'red'
+        ctx.fillText("¡¡GAME OVER!!", 175, 400);
+    }
+  }
   ctx.beginPath();
   
   ctx.rect(20,70, 40, 20);
@@ -185,6 +206,8 @@ function update()
   ctx.stroke();
 
 ctx.closePath();
+
   requestAnimationFrame(update);
 }
+
 update();
