@@ -5,18 +5,64 @@ const canvas = document.getElementById("canvas");
 canvas.width = 400;
 canvas.height = 500;
 
-
-//Pala punto fijo
 const ctx = canvas.getContext("2d");
-ctx.beginPath();
-  ctx.rect(170,465, 70, 10);
-  ctx.fillStyle = 'black';
-  ctx.fill();
-  ctx.stroke();
-ctx.closePath();
 
-//Ladrillos
-ctx.beginPath();
+//Coordenadas del objeto
+let x = 20;
+let y = 30;
+
+//Velocidades del objeto
+let velx = 7;
+let vely = 2;
+
+//Funcion update
+function update() 
+{
+  console.log("test");
+
+   //Rebote extremos verticales
+   if (x < 10 || x >= (canvas.width - 10) ) {
+    velx = -velx;
+  }
+
+  //Rebote extremos horizontales
+  if (y <= 10 || y > (canvas.height - 10) ) {
+    vely = -vely;
+  }
+
+  //Actualizar posición
+  x = x + velx;
+  y = y + vely;
+
+  //Borrar el canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  //Dibujar los elementos visibles
+  ctx.beginPath();
+    //Bola
+    ctx.arc(x, y, 6, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 1;
+    ctx.fillStyle = 'black';
+    ctx.stroke()
+
+    ctx.fill()
+    
+  ctx.closePath()
+
+   //Pala punto fijo
+   ctx.beginPath();
+   ctx.beginPath();
+   ctx.rect(170,465, 70, 10);
+   ctx.fillStyle = 'black';
+   ctx.stroke()
+
+    ctx.fill()
+    
+  ctx.closePath()
+
+
+  ctx.beginPath();
   ctx.rect(20,20, 40, 20);
   ctx.rect(65,20, 40, 20);
   ctx.rect(110,20, 40, 20);
@@ -68,13 +114,7 @@ ctx.beginPath();
 
 ctx.closePath();
 
-//Bola en punto fijo
+  requestAnimationFrame(update);
+}
 
-ctx.beginPath();
-  ctx.arc(205,350, 6, 0, 2 * Math.PI); 
-
-  ctx.fillStyle = 'black';
-  
-  
-  ctx.fill();
-ctx.closePath();
+update();
