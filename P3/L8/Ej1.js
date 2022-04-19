@@ -69,6 +69,7 @@ ctx.beginPath();
 ctx.closePath();
 
 //Bola en punto fijo
+ 
 
 ctx.beginPath();
   ctx.arc(205,350, 6, 0, 2 * Math.PI); 
