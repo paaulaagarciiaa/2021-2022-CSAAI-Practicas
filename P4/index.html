@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Procesado de imagen</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <h1>Procesado de imagen</h1>
+    <br>
+
+     <div id="cubo">
+      <div id="foto">
+          <h2>Imagen original</h2> <br>
+        <img src="Spiderman.jpg" alt="imagen" id="imagen">      
+      </div>
+      <div id="imagen2"> 
+        <h2>Imagen procesada</h2> <br>
+        <canvas id="canvas" width="1200" height="664" style="width: 70%;"></canvas>
+      </div>
+     </div>
+
+    <br>
+    <div id="imagenes">
+      <h3>Elegir imagen</h3>
+      <button id = "imagen_1"></button>
+      <button id = "imagen_2"></button>
+     </div>
+
+      <br>
+
+      <div id="botones">
+        <p></p>
+        <button id = "actualizar" value="Actualizar" onclick="location.reload()">RESTART</button>
+        <p></p>
+        <button id="botonGris">GRIS</button>
+        <p></p>
+        <button id="botonNegativo">NEGATIVO</button>
+        <p></p>
+        <button id="botonGirar">BOCA ABAJO</button>
+        <p></p>
+        <button id="botonGranulado">RUIDO</button>
+        <p></p>
+        <button id="botonColor">COLOR</button>
+      </div>
+       
+     <br>
+
+      <div id="RGB">
+        <b >RED: </b>
+        <input type="range" id="R" min="0" max="255" value="255"/>
+        <b id="range_valueRojo">0</b>
+        <br>
+        <b>GREEN: </b>
+        <input type="range" id="V" min="0" max="255" value="255"/>
+        <b id="range_valueVerde">0</b>
+        <br>
+        <b>BLUE: </b>
+        <input type="range" id="A" min="0" max="255" value="255"/>
+        <b id="range_valueAzul">0</b>
+      </div>
+      
+    </body>
+  </html>

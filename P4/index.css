@@ -1,0 +1,126 @@
+
+@font-face {
+    font-family: 'fuente';
+    src: url(good\ times\ rg.otf);
+  }
+
+  @font-face {
+    font-family: 'fuente2';
+    src: url(Far-From\ Homecoming\ Updated.otf);
+  }
+
+  body {
+    background: url("fondobody.jpg");
+  }
+
+  h1{
+    text-align: center;
+    font-family: 'fuente';
+    background-color: #333aff;
+    font-size: 40px;
+    margin-top: 50px;
+  }
+
+  h2{
+    text-align: center;
+    font-family: 'fuente2';
+    background-color: #333aff;
+    font-size: 22px;
+    border: solid; 
+    border-color: rgb(0, 0, 0); 
+  }
+
+  h3{
+    background-color: #ffffff;
+    height: 10px;
+    width: 120px;
+    border: solid;
+    border-color: black;
+    margin-left:560px;
+    margin-top: 1px;
+    font-size: 8px;
+    font-family: "fuente";
+    text-align: center;
+  }
+
+  
+
+  #imagen{
+    width: 65%;
+    border: solid;
+    border-color: rgb(227, 191, 14);
+    text-align: center;
+  }
+
+  #imagen2{
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  #cubo{
+      margin-left: 100px;
+      border: solid; 
+      border-color: rgb(0, 0, 0); 
+      background: url("fondo.jpg");
+      float: left;
+      width: 400px;
+      text-align: center;
+     }
+
+#RGB{ 
+    font-family: "fuente";
+    text-align: center;
+    margin-left: 27px;
+    margin-top: auto;
+    border: solid; 
+    border-color: rgb(0, 0, 0); 
+    float: left;
+    text-align: center;
+    background-color: #ffffff;
+    font-size: 10px;
+}
+
+  button{
+    background-color: #333aff;
+    height: 45px;
+    width: 90px;
+    border: solid;
+    border-color: black;
+    margin-left:70px;
+    margin-top: 3px;
+    font-size: 10px;
+    font-family: "fuente";
+    text-align: center;
+  }
+
+  #imagen_1{
+    background-color: rgb(227, 191, 14);
+    margin-top: 1px;
+    height: 40px;
+    width: 70px;
+    text-align: center;
+    margin-left: 40px;
+    background-image: url(Spiderman.jpg);
+    background-size: cover; 
+  }
+
+  #imagen_2{
+    background-image: url(venom.jpg);
+    margin-top: 1px;
+    height: 40px;
+    width: 70px;
+    text-align: center;
+    margin-left:10px;
+    background-size: cover; 
+  }
+
+  button:hover{
+    background-image: url(cara.png);
+    background-size: cover; 
+  }
+
+  #actualizar{
+    background-color: rgb(227, 191, 14);
+  }
+
+ 
