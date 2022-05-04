@@ -22,10 +22,10 @@ const ruido = document.getElementById('botonGranulado');
 
 img1.onclick = () => {
   img.src="Spiderman.jpg";
-}
+};
 img2.onclick = () => {
   img.src="venom.jpg";
-}
+};
 
 img.onload = function () {
   canvas.width = 1000;
