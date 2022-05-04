@@ -77,12 +77,12 @@
     float: left;
     text-align: center;
     background-color: #ffffff;
-    font-size: 10px;
+    font-size: 8px;
 }
 
   button{
     background-color: #333aff;
-    height: 45px;
+    height: 40px;
     width: 90px;
     border: solid;
     border-color: black;
