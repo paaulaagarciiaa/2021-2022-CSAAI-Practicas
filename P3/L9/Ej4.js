@@ -1,14 +1,13 @@
 console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
-const start = document.getElementById("start");
+//const start = document.getElementById("start");
 const raqueta = document.getElementById("raqueta");
 izquierda = document.getElementById("izquierda");
 derecha = document.getElementById("derecha");
 
 canvas.width = 400;
 canvas.height = 600;
-
 const ctx = canvas.getContext("2d");
 
 const ESTADO = {
@@ -17,40 +16,29 @@ const ESTADO = {
     FINISH: 2,
 }
 
-//Límite de minimas vidas
+
 const MIN_VIDAS = 0;
-//Vidas totales
+//Vidas
 let vidas = 3;
 
-//Comienza el estado inicial
 let estado = ESTADO.INIT;
 
-//Coordenadas bola
+//Coordenadas de la bola
 let x = 205;
 let y = 455;
 
-//Velocidad bola
+//-- Velocidades de la bola
 let velx = 3;
 let vely = -1;
 
-//Coordenadas raqueta
+//-- Coordenadas de la raqueta
 let w = 170;
 let z = 465;
 
 
 function update() 
 {
-  start.onclick = () => {
-    if (vidas == MIN_VIDAS){
-        estado = ESTADO.FINISH;
-        console.log("Fin");
-    }else{
-        vidas -= 1;
-        estado = ESTADO.SAQUE;
-        console.log("Saque");
-    }
-  }
-
+  
   if (x < 10 || x >= (canvas.width - 10) ) {
     velx = -velx;
   }
@@ -69,10 +57,17 @@ function update()
   if (w > 10 || w <= (canvas.width - 10) ) {
 
     window.onkeydown = (e) => {
-      if (estado == ESTADO.INIT)
-      return;
-
       switch (e.key) {
+        case " ":
+        if (vidas == MIN_VIDAS){
+            estado = ESTADO.FINISH;
+            console.log("Fin");
+        }else{
+            vidas -= 1;
+            estado = ESTADO.SAQUE;
+            console.log("Saque");
+        }
+        break;
         case "a":
         case "A":
           console.log("Moviendo a la izquierda la raqueta");
@@ -103,23 +98,27 @@ function update()
     y = y + vely;
   }
 
+ 
+    
+  //Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  //Dibujar los elementos visibles
   ctx.beginPath();
-        //Bola
+        // Bola
         ctx.arc(x, y, 10, 0, 2 * Math.PI);
         ctx.strokeStyle = 'blue';
         ctx.lineWidth = 1;
         ctx.fillStyle = 'white';
 
-        //Dibujar trazo
+        //trazo
         ctx.stroke()
 
-        //Dibujar relleno
+        //relleno
         ctx.fill()     
   ctx.closePath()
 
-  //Texto 
+  //TEXTO
   ctx.font = "20px Arial Black";
   ctx.fillStyle = 'white'
   ctx.fillText(vidas, 370, 40);
@@ -129,7 +128,7 @@ function update()
   ctx.fillStyle = 'white'
   ctx.fillText("33", 25, 40);
 
-  //Mensaje final
+  //TEXTO
   if (estado == ESTADO.FINISH) {
     if (vidas == MIN_VIDAS){
         ctx.font = "50px Arial Black";
@@ -148,7 +147,6 @@ function update()
       
   ctx.closePath()
 
-//LADRILLOS
   ctx.beginPath();
   
   ctx.rect(20,70, 40, 20);
@@ -201,6 +199,7 @@ function update()
   ctx.stroke();
 
 ctx.closePath();
+
 
   requestAnimationFrame(update);
 }
