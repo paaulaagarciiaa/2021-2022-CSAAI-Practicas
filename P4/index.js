@@ -155,7 +155,7 @@ botonGranulado.onclick = () => {
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
   for (var i = 0; i < data.length; i+=4) {
-      ruid = Math.floor(Math.random() * (100 + 100 + 10) - 150)
+      ruid = Math.floor(Math.random() * (100 + 100 + 10) - 150);
       data[i] += ruid;
       data[i+1] += ruid;
       data[i+2] += ruid;
