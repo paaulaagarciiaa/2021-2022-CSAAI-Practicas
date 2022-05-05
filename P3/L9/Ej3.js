@@ -22,7 +22,6 @@ const MIN_VIDAS = 0;
 //Vidas totales
 let vidas = 3;
 
-//Comienza el estado inicial
 let estado = ESTADO.INIT;
 
 //Coordenadas bola
