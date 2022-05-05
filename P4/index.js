@@ -116,7 +116,7 @@ botonGris.onclick = () => {
 };
 
 // Funcion negativo
-function negativo(){
+function Negativo(){
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
