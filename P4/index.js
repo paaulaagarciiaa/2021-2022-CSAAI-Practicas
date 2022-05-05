@@ -1,3 +1,5 @@
+//Paula Garcia Rodríguez
+//Práctica 4
 var console;
 console.log("Ejecutando JS....");
 
@@ -11,15 +13,17 @@ const V = document.getElementById('V');
 const A = document.getElementById('A');
 
 // Valores  de la barra
-const range_valueRojo = document.getElementById('range_valueRojo');
-const range_valueVerde = document.getElementById('range_valueVerde');
-const range_valueAzul = document.getElementById('range_valueAzul');
+const rango_Rojo = document.getElementById('rango_Rojo');
+const rango_Verde = document.getElementById('rango_Verde');
+const rango_Azul = document.getElementById('rango_Azul');
 
+//constantes añadidas
 const img1 = document.getElementById('imagen_1');
 const img2 = document.getElementById('imagen_2');
 const giro = document.getElementById('botonGirar');
 const ruido = document.getElementById('botonGranulado');
 
+// Dos imagenes
 img1.onclick = () => {
   img.src="Spiderman.jpg";
 };
@@ -37,11 +41,11 @@ img.onload = function () {
 };
 
     ctx.drawImage(img, 0,0);
-    // Funcion de retrollamada deslizadores
     function RGB(){
 
+    //Rojo
     R.oninput = () => {
-      range_valueRojo.innerHTML = R.value;
+      rango_Rojo.innerHTML = R.value;
       //  Imagen original
       ctx.drawImage(img, 0,0);
       // Imagen en pixeles
@@ -56,8 +60,9 @@ img.onload = function () {
       ctx.putImageData(imgData, 0, 0);
     };
   
+    //Verde
     V.oninput = () => {
-        range_valueVerde.innerHTML = V.value;
+        rango_Verde.innerHTML = V.value;
       ctx.drawImage(img, 0,0);
       let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       let data = imgData.data;
@@ -70,8 +75,9 @@ img.onload = function () {
       ctx.putImageData(imgData, 0, 0);
     };
   
+    //Azul
     A.oninput = () => {
-        range_valueAzul.innerHTML = A.value;
+        rango_Azul.innerHTML = A.value;
       ctx.drawImage(img, 0,0);
       let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       let data = imgData.data;
@@ -84,9 +90,8 @@ img.onload = function () {
       ctx.putImageData(imgData, 0, 0);
     };
   }
-  
 
-// GRISES
+// Funcion grises
 function Grises(){
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -104,7 +109,13 @@ function Grises(){
     ctx.putImageData(imgData, 0, 0);
 }
 
-// NEGATIVO
+// Boton gris
+botonGris.onclick = () => {
+  Grises();
+  document.getElementById('RGB').style.display = 'none';
+};
+
+// Funcion negativo
 function negativo(){
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -123,7 +134,36 @@ function negativo(){
 }
 document.getElementById('RGB').style.display = 'none';
 
-// BOTONES
+// Boton negativo
+botonNegativo.onclick = () => {
+  negativo();
+  document.getElementById('RGB').style.display = 'none';
+};
+
+// Boton girar
+botonGirar.onclick=()=>{
+  console.log("girar");
+  img.onload();
+  ctx.translate(0,canvas.height);
+  ctx.scale(1,-1);
+  ctx.drawImage(img, 0,0);
+};
+
+// Boton ruido
+botonGranulado.onclick = () => {
+  var ruid = 1;
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+  for (var i = 0; i < data.length; i+=4) {
+      ruid = Math.floor(Math.random() * (100 + 100 + 10) - 150)
+      data[i] += ruid;
+      data[i+1] += ruid;
+      data[i+2] += ruid;
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+
+// Boton color
 botonColor.onclick = () => {
   ctx.drawImage(img, 0,0);
   R.value = 255;
@@ -132,36 +172,5 @@ botonColor.onclick = () => {
   RGB();
   document.getElementById('RGB').style.display = 'block';
 };
-
-botonGris.onclick = () => {
-  Grises();
-  document.getElementById('RGB').style.display = 'none';
-};
-
-botonNegativo.onclick = () => {
-  negativo();
-  document.getElementById('RGB').style.display = 'none';
-};
-
-botonGirar.onclick=()=>{
-    console.log("girar");
-    img.onload();
-    ctx.translate(0,canvas.height);
-    ctx.scale(1,-1);
-    ctx.drawImage(img, 0,0);
-  };
-
-botonGranulado.onclick = () => {
-    var ruid = 1;
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    let data = imgData.data;
-    for (var i = 0; i < data.length; i+=4) {
-        ruid = Math.floor(Math.random() * (100 + 100 + 10) - 150)
-        data[i] += ruid;
-        data[i+1] += ruid;
-        data[i+2] += ruid;
-    }
-    ctx.putImageData(imgData, 0, 0);
-}
 
 console.log("Fin...");
